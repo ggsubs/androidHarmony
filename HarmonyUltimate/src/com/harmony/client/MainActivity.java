@@ -89,8 +89,8 @@ public class MainActivity extends Activity implements OnClickListener, OnTouchLi
 
         auth = new Authentication();
 
-        refreshConfigurationFromString(readFromFile("config.txt"));
-        //logInToClient();
+        //refreshConfigurationFromString(readFromFile("config.txt"));
+        logInToClient();
     }
 
     /**
@@ -254,6 +254,7 @@ public class MainActivity extends Activity implements OnClickListener, OnTouchLi
         //if on home wifi then use the home wifi IP and port, otherwise use the external ones
         String hubIP = Configuration.hubWifiAddress;
         int xmppPort = Configuration.hubWifiXmppPort;
+        /*
         WifiManager wifiMgr = (WifiManager) getSystemService(Context.WIFI_SERVICE);
         WifiInfo mWifi = wifiMgr.getConnectionInfo();
         String wifiName = mWifi.getSSID();
@@ -261,7 +262,8 @@ public class MainActivity extends Activity implements OnClickListener, OnTouchLi
             hubIP = Configuration.hubInternetAddress;
             xmppPort = Configuration.hubInternetXmppPort;
         }
-
+		*/
+        
         hubCommandsClient = new Client(hubIP, xmppPort, this, this);
         //if (!auth.getSessionToken(loginToken, "192.168.2.128", hubCommandsClient)) {
         if (!auth.getSessionToken(loginToken, hubIP, xmppPort, hubCommandsClient)) {

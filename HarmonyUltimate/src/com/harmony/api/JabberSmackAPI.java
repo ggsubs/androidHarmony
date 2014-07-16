@@ -185,8 +185,9 @@ public class JabberSmackAPI {
 
         @Override
         public String getChildElementXML() {
-            String str = "<oa xmlns=\"connect.logitech.com\" mime=\"vnd.logitech.connect/vnd.logitech.pair\">" + "token=" + loginToken
-                    + ":name=foo#iOS6.0.1#iPhone" + "</oa>";
+            //String str = "<oa xmlns=\"connect.logitech.com\" mime=\"vnd.logitech.connect/vnd.logitech.pair\">" + "token=" + loginToken
+            //        + ":name=foo#iOS6.0.1#iPhone" + "</oa>";
+            String str = "<oa xmlns='connect.logitech.com' mime='vnd.logitech.connect/vnd.logitech.pair'>token=nyrwyaN5xvzBIQg3Dby4UzXMyKkiZSKrshpdnyc0C8A==:method=pair:name=37368f5cb2a36e40#occam#nexus 4</oa>";
 
             Log.i(TAG, str);
             return str;

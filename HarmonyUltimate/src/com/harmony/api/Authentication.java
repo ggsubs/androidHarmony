@@ -182,7 +182,10 @@ public class Authentication {
             }
 
             hubSessionConnection = new JabberSmackAPI(null, xmppPort);
-            String result = hubSessionConnection.login(hubIP, "guest@connect.logitech.com/gatorade.", "gatorade.");
+            
+            //String result = hubSessionConnection.login(hubIP, "guest@connect.logitech.com/gatorade.", "gatorade.");
+            String result = hubSessionConnection.login(hubIP, "guest", "nyrwyaN5xvzBIQg3Dby4UzXMyKkiZSKrshpdnyc0C8A=");
+            
             if (!result.equalsIgnoreCase("OK")) {
                 Log.e(TAG, "GuestSessionTokenTask login error - " + result);
                 return result;
